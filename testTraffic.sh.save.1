@@ -1,0 +1,30 @@
+#!/bin/bash
+
+echo "program started"
+
+red = 11
+yellow = 13
+green = 15
+
+butt
+
+gpio mode $red out
+gpio mode $yellow out
+gpio mode $green out
+gpio mode $button in
+
+gpio write $red 1
+#!/bin/bash
+
+echo "Traffic Light Started"
+
+gpio mode 0 out
+
+while true; do
+
+        gpio write 0 1
+        sleep 0.3
+        gpio write 0 0
+        sleep 0.4
+done
+

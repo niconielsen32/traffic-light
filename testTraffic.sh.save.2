@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Assign names to GPIO pin numbers for each light
+RED=0
+YELLOW=2
+GREEN=3
+
+# Assign names to states
+ON=1
+OFF=0
+
+gpio mode $RED out
+gpio mode $YELLOW out
+gpio mode $GREEN out
+
+# Loop forever until user presses Ctrl-C
+while [ 1 ]
+do
+ 	#traffic light
+	gpio write $RED $ON
+	sleep 0.5
+	gpio write $YELLOW $ON
+	gpio wrtie $RED $OFF
+	sleep 0.5
+	gpio write $GREEN 
+	sleep 0.5
+	gpio write $YELLOW $ON
+	sleep 1
+	echo "Off"
+	gpio write $YELLOW $OFF
+	sleep 1
+done
